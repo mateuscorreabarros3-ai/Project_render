@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../pagExepli.css">
+    <link rel="icon" href="../img/LogoIcon.png" type="image/png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+    <title>MathcroW</title>
+</head>
+<body id="body">
+    <div class="sim" id="sim">
+        <nav>
+            <div class="sidebar">
+                <a id="pagPrincipal" onclick="escolherOutro()">Página principal</a>
+                <div class="espaco"></div>
+                <a id="a_explicacao" href="#explicacao_a">Explicação</a>
+                <div class="espaco"></div>
+                <a id="a_exemplos" href="#exemplos" name="perfil">Exemplos</a>
+                <div class="espaco"></div>
+                <a id="a_exercicios" href="#exercicios">Exercícios</a>
+
+                
+                <p id="tempo"></p>
+
+                <div class="espaco-barra">
+                    <div class="barra" id="barra"></div>
+                </div>
+                <button onclick="pararPomodoro()" style="display: none;" id="btPomoParar" class="btPomoParar">Parar</button>
+            </div>
+
+            
+
+            <div class="down">
+                <button class="diminuir" id="diminuir"><</button>
+                <a id="nome" name="perfil" href="#">A</a>
+            </div>
+        </nav>
+    </div>
+
+    <button class="mostrar" id="mostrar">></button>
+
+    <!--Configurações-->
+    <div class="popConfi" id="popConf">
+        <div class="container">
+            <div class="escoTema intern">
+                <h3>Modo:</h3>
+                <select name="temas" id="temas">
+                    <option value="escuro">Escuro</option>
+                    <option value="claro">Claro</option>
+                    <option value="alto">Alto Contraste</option>
+                </select>
+            </div>
+            <div class="dislexia intern">
+                <button id="btnDislexias">Dislexia</button>
+            </div>
+            <div class="intern">
+                <h3>Tamanho fonte</h3>
+                <button id="btn-aumentar">A+</button>
+                <button id="btn-diminuir">A-</button>
+            </div>
+            <div class="Xpop">
+                <button id="Xpop">X</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="resto" id="resto">
+
+        
+
+        <img src="../img/corvoP3.png" alt="corvo" class="imgCorvo">
+
+        <div class="down-conce">
+            <div class="bt-abrir" id="bt-abrir">
+                <audio src="../30m.mp3" id="audioChuva"></audio>
+                <audio src="../marrom.mp3" id="audioMarrom"></audio>
+                <button onclick="tocarChuva()">Chuva</button>
+                <div>
+                    <select name="pomodoroOpc" id="pomodoroOpc" onchange="trocaOpcPomodoro()" style="display: none;">
+                        <option value="#">Selecione a opção</option>
+                        <option value="25">25 e 5</option>
+                        <option value="50">50 e 10</option>
+                    </select>
+                </div>
+                <button onclick="pomodoro()">Pomodoro</button>
+                <button onclick="tocarMarrom()" style="font-size: 0.8rem;">Ruido Marrom</button>
+                <button id="btConfi">Mais</button>
+            </div>
+            <button onclick="abrirBt()" id="bt-conce">Concentração</button>
+        </div>
+
+
+
+        <!--Inicio, hora da escolha-->
+        
+        <div class="esco" id="esco">
+            <div class="escolha" id="escolha">
+                <label for="meu-select" class="titu-set sla">Selecione o conteúdo:</label>
+                <br>
+                <select id="meuSelect" name="cursos" class="select-cont sla">
+                    <option value="set"> </option>
+                    <option value="exp">Exponencial</option>
+                    <option value="log">Logaritmo</option>
+                    <option value="mat">Matrizes</option>
+                    <option value="sist">Sistemas Lineares(Preview)</option>
+                </select>
+                <br>
+                <button onclick="selecaoCurso()" class="btn-esco">Escolhido</button>
+            </div>
+        </div>
+
+        <!--Explicações-->
+
+
+        <div class="explicacao" id="explicacao">
+            <h2 id="titu">Titulo</h2>
+            <div>
+                <h2 id="explicacao_a">Explicação</h2>
+                <div id="expli">Meu nome</div>
+            </div>
+            <div>
+                <br>
+                <h2 id="exemplos">Exemplo</h2>
+                <div id="exemp">Meu nome</div>
+            </div>
+
+            <div class="esp50"></div>
+
+            <!--Questões-->
+            
+
+            <div class="quiz-container" id="exercicios">
+                <div id="quiz-tela">
+                    <div class="progresso">Questão <span id="num-questao">1</span> de 9 <span id="nivel">(Fácil)</span></div>
+                    <h2 id="pergunta">Texto da Pergunta aqui?</h2>
+                    
+                    <div id="opcoes" class="opcoes-container"></div>
+
+                    <div class="botoes-container">
+                        <button id="btn-dica" onclick="mostrarDica()">Dica</button>
+                        <button id="btn-proxima" onclick="proximaQuestao()" disabled>Próxima</button>
+                    </div>
+
+                    <p id="texto-dica" class="dica-escondida"></p>
+                </div>
+
+                <div id="resultado-tela" class="escondido">
+                    <h2>Fim do Quiz!</h2>
+                    <p>Você acertou <span id="total-acertos">0</span> de 9 questões.</p>
+                    <button onclick="reiniciarQuiz()">Jogar Novamente</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    
+
+
+
+
+
+    <script src="../pagExepli.js"></script>
+</body>
+</html>

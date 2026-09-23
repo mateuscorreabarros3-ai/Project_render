@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .espaco-barra{
+            width: 1000px;
+            height: 50px;
+            border: 1px solid black;
+        }
+
+        .barra{
+            width: 100%;
+            height: 100%;
+            justify-self: end;
+        }
+    </style>
+</head>
+<body>
+    <select name="pomodoroOpc" id="pomodoroOpc" onchange="trocaOpcPomodoro()">
+        <option value="#">Selecione a opção</option>
+        <option value="25">25 e 5</option>
+        <option value="50">50 e 10</option>
+    </select>
+
+    <p id="tempo"></p>
+
+    <div class="espaco-barra">
+        <div class="barra" id="barra"></div>
+    </div>
+
+    <button onclick="pararPomodoro()">ザ ワールド</button>
+
+    <script src="aa.js"></script>
+</body>
+</html>

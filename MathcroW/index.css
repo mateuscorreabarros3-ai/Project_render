@@ -1,0 +1,255 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(33, 21, 50));
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Menu de Navegação Inteligente */
+nav {
+    width: 100%;
+    height: 12vh;
+    display: flex;
+    justify-content: space-between; /* Empurra os links para a esquerda e o botão para a direita */
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    padding: 0 5%; /* Margem dinâmica nas laterais */
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px; /* Espaçamento controlado entre os links */
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    background-color: rgb(91, 29, 141);
+    font-size: 1.3vw;
+    border-radius: 10px;
+    font-family: "Poppins", sans-serif;
+    transition: background 0.3s;
+}
+
+nav a:hover {
+    background-color: rgb(120, 40, 180);
+}
+
+/* ==========================================
+   NOVO: CSS DO DROPDOWN (CONTEÚDOS)
+   ========================================== */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Garante que o link "Conteúdos" mantenha a mesma aparência */
+.conaa {
+    cursor: pointer;
+}
+
+/* A caixinha da aba que começa escondida */
+.aba {
+    display: none; 
+    position: absolute;
+    top: 100%; /* Surge logo abaixo do botão Conteúdos */
+    left: 0;
+    background-color: rgb(25, 15, 38); /* Um roxo bem escuro para combinar com o fundo */
+    min-width: 200px;
+    border: 1px solid rgb(91, 29, 141);
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.6);
+    padding: 10px 0;
+    z-index: 100;
+    flex-direction: column;
+}
+
+/* Reseta o estilo global 'nav a' apenas para os links de DENTRO da aba */
+.aba a {
+    background-color: transparent; /* Remove o fundo roxo padrão */
+    border-radius: 0;
+    font-size: 1.2vw; /* Um pouco menor para caber na caixinha */
+    padding: 12px 20px;
+    display: block;
+    text-align: left;
+}
+
+/* Efeito de passar o mouse nos links internos da aba */
+.aba a:hover {
+    background-color: rgb(91, 29, 141); /* Destaca com a cor do seu tema */
+}
+
+/* MÁGICA: Mostra a aba quando passa o mouse no container .dropdown */
+.dropdown:hover .aba {
+    display: flex;
+}
+/* ========================================== */
+
+
+.btn-login {
+    color: white;
+    padding: 8px 22px;
+    background-color: rgb(91, 29, 141);
+    border-radius: 10px;
+    border: none;
+    font-size: 1.3vw;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-login:hover {
+    background-color: rgb(120, 40, 180);
+}
+
+.bottom-space {
+    background-color: blueviolet;
+    height: 5px;
+    width: 100%; /* Ocupa 100% da tela de forma responsiva */
+}
+
+
+
+/* ==========================================
+   CSS DO CARROSSEL (Mantido e revisado)
+   ========================================== */
+.carrossel-container {
+    position: relative;
+    width: 75%; 
+    margin: auto;
+    overflow: hidden; 
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    height: 85vh;
+    margin-bottom: 30px;
+    margin-top: -50px;
+}
+
+.carrossel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out; 
+    width: 100%;
+}
+
+.slide {
+    min-width: 100%;
+}
+
+.slide img {
+    width: 100%;
+    display: block;
+    height: auto;
+    object-fit: cover;
+}
+
+.botao-prev, .botao-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    user-select: none;
+    z-index: 10;
+}
+
+.botao-prev:hover, .botao-next:hover {
+    background-color: rgba(91, 29, 141, 0.9); /* Muda para a cor do seu tema ao passar o mouse */
+}
+
+.botao-prev { left: 10px; }
+.botao-next { right: 10px; }
+
+
+
+
+
+
+
+
+
+.logo{
+    width: 5vw;
+    height: 10vh;
+}
+
+.bemVindo{
+    color: white;
+    margin-left: 10vw;
+    font-size: 3vw;
+    font-family: 'Poppins', Verdana, Geneva, Tahoma, sans-serif;
+}
+.bemVindo p{
+    font-size: 16px;
+    font-weight: normal;
+    
+}
+
+.divBem{
+    display: flex;
+    box-sizing: border-box;
+}
+
+.divBem img{
+    width: 10vw;
+    height: 40vh;
+}
+
+.titulo-planos{
+    justify-content: center;
+    color: #ffff;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+}
+
+.container-planos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.planos{
+    height: 450px;
+    width: 300px;
+    border-radius: 15px;
+    background-color:rgba(91, 29, 141, 0.9);
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+    margin: 30px;
+    flex-direction: column;
+}
+.planos img{
+    height: 220px;
+    width: 250px;
+    border-radius: 15px;
+}
+
+.planos p{
+    font-size: 16px;
+}
+
+.planos:hover{
+    box-shadow: 10px 10px 10px rgb(0, 0, 0);
+    transition: 0.3s;
+    cursor: pointer;
+    background-color: blueviolet;
+}
+.rodape{
+    height: 200px;
+    width: auto;
+}

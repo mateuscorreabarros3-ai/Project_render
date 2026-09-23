@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudo Completo de Matrizes</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <div class="conteudo-matrizes">
+
+    <h1>Matrizes</h1>
+    <p>Matriz é uma tabela organizada em linhas e colunas no formato <strong>m &times; n</strong>, onde <strong>m</strong> representa o número de linhas (horizontal) e <strong>n</strong> o número de colunas (vertical).</p>
+    <p>A função das matrizes é relacionar dados numéricos. Por isso, o conceito de matriz não é só importante na Matemática, mas também em outras áreas já que as matrizes têm diversas aplicações.</p>
+
+    <h2>Notações e Representações</h2>
+    <p>As matrizes são sempre representadas por <strong>letras maiúsculas</strong> (A, B, C…), acompanhadas por índices onde o primeiro número indica a quantidade de linhas e o segundo o número de colunas.</p>
+    <p>A quantidade de linhas e colunas determina sua <strong>ordem</strong>. Os elementos ficam organizados entre parênteses, colchetes ou duas barras verticais.</p>
+
+    <p><strong>Exemplo Matriz A (Ordem 2x3):</strong></p>
+    <table border="1" style="border-collapse: collapse; text-align: center; margin: 10px 0;">
+        <tr><td style="padding: 5px 15px;">-1</td><td style="padding: 5px 15px;">2</td><td style="padding: 5px 15px;">0</td></tr>
+        <tr><td style="padding: 5px 15px;">0</td><td style="padding: 5px 15px;">4</td><td style="padding: 5px 15px;">&Sqrt;3</td></tr>
+    </table>
+
+    <p><strong>Exemplo Matriz B - Matriz Linha (Ordem 1x4):</strong></p>
+    <table border="1" style="border-collapse: collapse; text-align: center; margin: 10px 0;">
+        <tr><td style="padding: 5px 15px;">-51</td><td style="padding: 5px 15px;">13</td><td style="padding: 5px 15px;">-7</td><td style="padding: 5px 15px;">3</td></tr>
+    </table>
+
+    <p><strong>Exemplo Matriz C - Matriz Coluna (Ordem 3x1):</strong></p>
+    <table border="1" style="border-collapse: collapse; text-align: center; margin: 10px 0;">
+        <tr><td style="padding: 5px 15px;">1</td></tr>
+        <tr><td style="padding: 5px 15px;">-2</td></tr>
+        <tr><td style="padding: 5px 15px;">0</td></tr>
+    </table>
+
+    <h2>Elementos Genéricos</h2>
+    <p>O elemento genérico é representado por letras minúsculas (a, b, c…), acompanhado de índices que indicam sua localização exata (linha e coluna).</p>
+    
+    <p>Dada uma matriz onde <strong>a<sub>11</sub> = 4</strong>, <strong>a<sub>12</sub> = 16</strong>, isso significa:</p>
+    <ul>
+        <li><strong>a<sub>11</sub></strong>: Elemento da linha 1, coluna 1.</li>
+        <li><strong>a<sub>12</sub></strong>: Elemento da linha 1, coluna 2.</li>
+    </ul>
+
+    <h2>Tipos de Matrizes</h2>
+    <ul>
+        <li><strong>Matriz Quadrada:</strong> O número de linhas é igual ao número de colunas (Ex: 2x2, 3x3). Possui diagonal principal e secundária.</li>
+        <li><strong>Matriz Identidade:</strong> Matriz quadrada onde os elementos da diagonal principal são iguais a 1 e os demais são 0.</li>
+        <li><strong>Matriz Unitária:</strong> Possui apenas 1 linha e 1 coluna (um único elemento).</li>
+        <li><strong>Matriz Nula:</strong> Todos os elementos são iguais a zero.</li>
+        <li><strong>Matriz Oposta:</strong> Matriz com os sinais de todos os elementos invertidos.</li>
+        <li><strong>Matriz Transposta (A<sup>T</sup>):</strong> Matriz obtida trocando as linhas pelas colunas ordenadamente.</li>
+    </ul>
+
+    <h2>Operações Básicas</h2>
+    <h3>Adição e Subtração</h3>
+    <p>As matrizes devem ter obrigatoriamente a mesma ordem. A operação é feita somando ou subtraindo os elementos correspondentes.</p>
+
+    <h3>Multiplicação por Número Real</h3>
+    <p>Multiplica-se cada um dos elementos da matriz pelo número em questão.</p>
+
+    <h3>Multiplicação de Matrizes</h3>
+    <p>Só é possível se o número de colunas da primeira matriz for igual ao número de linhas da segunda matriz.</p>
+
+    <h2>Determinantes</h2>
+    <p>O determinante é um número real associado a uma matriz quadrada.</p>
+    <ul>
+        <li><strong>Ordem 1:</strong> É o próprio elemento.</li>
+        <li><strong>Ordem 2:</strong> Multiplicação da diagonal principal menos a multiplicação da diagonal secundária.</li>
+        <li><strong>Ordem 3:</strong> Calculado duplicando-se as duas primeiras colunas (Regra de Sarrus).</li>
+    </ul>
+
+</div>
+
+</body>
+</html>

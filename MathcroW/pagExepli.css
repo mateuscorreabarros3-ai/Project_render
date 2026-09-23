@@ -1,0 +1,462 @@
+/* Tema padrão (escuro) */
+:root {
+  --bg-color: rgb(0, 0, 0);
+  --bg-color2: rgb(33, 21, 50);
+  --bg-nav: rgb(68, 29, 122);
+  --text-color: #ffffff;
+  --text-color2: rgb(169, 118, 241);
+  --text-sub: #fff;
+}
+
+/* Tema Claro quando o atributo data-theme for 'claro' */
+[data-theme="claro"] {
+  --bg-color: #fff;
+  --bg-color2: rgb(169, 118, 241);
+  --bg-nav: rgb(149, 101, 216);
+  --text-color: rgb(0, 0, 0);
+  --text-color2: rgb(73, 46, 112);
+  --text-sub: rgb(0, 0, 0);
+}
+
+[data-theme="alto"] {
+  --bg-color: rgb(0, 0, 0);
+  --bg-color2: rgb(0, 0, 0);
+  --bg-nav: rgb(108, 2, 255);
+  --text-color: #fffb00;
+  --btn-bg: #fff;
+  --text-sub: rgb(17, 199, 0);
+  --text-sub2: red;
+}
+
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('opendyslexic-0.92/OpenDyslexic-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, var(--bg-color), var(--bg-color2));
+    font-family: 'poppins', sans-serif;
+    position: relative;
+}
+
+.espaco{
+    height: 10vh;
+    width: 10px;
+}
+
+nav a{
+    color: var(--text-sub);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover{
+    color: var(--text-color2);
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 15px;
+}
+
+.sidebar a{
+    color: var(--text-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.down{
+    position: absolute;
+    bottom: 20px; 
+    left: 2px;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+}
+
+.diminuir{
+    width: calc(100% - 4px);
+    font-size: 2rem;
+    background-color: rgba(0, 0, 0, 0.05);
+    border: none;
+    transition: background-color 0.7s;
+    color: var(--text-color);
+}
+
+.diminuir:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.sim{
+    width: 10vw;
+    height: 100%; /* Ocupa 100% da altura da tela */
+    background-color: var(--bg-nav);
+    color: white;
+    position: fixed; /* Fixa o menu na tela */
+    padding-top: 20px;
+    font-size: 1.25rem; /* Ajustado de 3vh (~20px) */
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.resto{
+    margin-left: 10vw; /* Deve ser maior que a largura do menu */
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1;
+    position: relative;
+}
+
+/*Primeira parte de escolhar os cursos*/
+
+.esco{
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.escolha{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 25vw;
+    font-size: 2rem; /* Ajustado de 4vw */
+}
+
+.escolha label {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.75rem; /* Ajustado de 4vh */
+}
+
+.sla {
+    margin-bottom: 15px;
+}
+
+.escolha button{
+    font-size: 1rem; /* Ajustado de 1.5vw */
+    border: none;
+    border-radius: 80px;
+    background-color: rgba(91, 29, 141, 0.9);
+    color: white;
+    cursor: pointer;
+    margin-left: -15px;
+}
+
+.escolha button:hover{
+    background-color: blueviolet;
+    transition: 0.3s;
+}
+
+/*Geral????*/
+
+.mostrar{
+    width: 2vw;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    transition: background-color 0.7s;
+    display: none;
+    position: fixed;
+    z-index: 2;
+}
+
+.mostrar:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.titu-set{
+    font-size: 1.75rem; /* Ajustado de 4vh */
+}
+
+.select-cont{
+    height: 4vh;
+    width: 200px;
+    border-radius: 15px; 
+}
+
+.btn-esco{
+    font-size: 1.25rem; /* Convertido de 20px */
+    margin-left: 30px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.explicacao{
+    display: none;
+    color: var(--text-color);
+    padding: 0px 7vw;
+    font-size: 1rem; /* Ajustado de 1vw */
+}
+
+.explicacao h4{
+    color: var(--text-sub);
+}
+
+.explicacao h3{
+    color: var(--text-sub2);
+}
+
+.explicacao h2{
+    color: var(--text-sub);
+}
+
+.resposta-questao{
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-size: 0.75rem; /* Convertido de 10px */
+    margin: 2px;
+}
+
+/*Pop de comfigurações*/
+
+.popConfi{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    z-index: 3;
+    display: none;
+    align-content: center;
+    justify-content: center;
+
+}
+
+.container{
+    width: 40vw;
+    height: 40vw;
+    background-color: var(--bg-nav);
+    border-radius: 20px;
+    align-items: center;
+    justify-items: center;
+    color: var(--text-color);
+    position: relative;
+    position: fixed;
+}
+
+.intern{
+    justify-items: center;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.intern button{
+    font-size: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    transition: background-color 0.7s;
+}
+
+.intern button:hover{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.intern option, select{
+    font-size: 1.2rem;
+    color: var(--text-sub2);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.intern h3{
+    color: var(--text-sub);
+}
+
+.Xpop{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.Xpop button{
+    font-size: 2rem;
+    width: 5vw;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    color: var(--text-color);
+    border-radius: 20px;
+    transition: background-color 0.7s;
+}
+
+.Xpop button:hover{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dislexia{
+    margin: 40px;
+}
+
+/*Botão de concentração*/
+
+.down-conce{
+    position: fixed;
+    bottom: 20px; 
+    right: 15px;
+    flex-direction: column;
+    align-items: flex-end; /* Alinha os botões filhos à direita */
+    gap: 12px; /* Cria um espaçamento automático entre o menu e o botão principal */
+    z-index: 9999; /* Garante que ficará na frente de qualquer outro elemento */
+}
+
+.down-conce button{
+    height: 10vh;
+    width: 10vw;
+    border-radius: 80px;
+    font-size: 1rem; /* Ajustado de 1.2vw */
+    background-color: rgba(91, 29, 141, 0.5);
+    color: #fff;
+    border: none;
+}
+
+.down-conce button:hover{
+    transition: 0.3s;
+    cursor: pointer;
+    background-color: blueviolet;
+}
+
+.bt-abrir{
+    display: none;
+    flex-direction: column;
+    gap: 8px; /* Espaço entre cada botão de áudio */
+    background-color: rgba(255, 255, 255, 0.5); /* Um fundo semi-transparente */
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra suave para dar profundidade */
+}
+
+.bt-abrir button{
+    border: none;
+    border-radius: 0;
+    height: 7vh;
+    width: 9vw;
+    background-color: rgba(91, 29, 141, 0.9);
+}
+
+/*Questoes*/
+
+.quiz-container {
+    background-color: #888888;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    color: black;
+}
+
+.progresso {
+    font-size: 0.875rem; /* Convertido de 0.9rem */
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.opcoes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.quiz-container button {
+    padding: 12px;
+    font-size: 1rem; /* Mantido em 1rem */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.opcao-btn {
+    background-color: #e4e6eb;
+    text-align: left;
+}
+
+.opcao-btn:hover {
+    background-color: #d8dadf;
+}
+
+.opcao-btn.correta {
+    background-color: #2ec4b6;
+    color: white;
+}
+
+.opcao-btn.errada {
+    background-color: #e71d36;
+    color: white;
+}
+
+.botoes-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+#btn-dica { background-color:rgba(91, 29, 141, 0.9); color: white; }
+#btn-proxima { background-color: rgba(91, 29, 141, 0.9); color: white }
+#btn-proxima:disabled { background-color: blueviolet; cursor: not-allowed; }
+
+#texto-dica {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #fff3cd;
+    border-left: 5px solid blueviolet;
+    color: #856404;
+    border-radius: 4px;
+}
+
+.dica-escondida { display: none; }
+.escondido { display: none; }
+
+/*Botão Pomodoro*/
+
+.btPomoParar{
+    background-color:rgba(91, 29, 141, 0.5);
+    color:white;
+    border-radius: 80px;
+    font-size: 1rem; /* Ajustado de 1.5vw */
+    text-align: center;
+    width: 8vw;
+    height: 7vh;
+}
+
+.imgCorvo{
+    position: absolute;
+    z-index: 0;
+    right: 30px;
+    height: 40vh;
+    width: 20vw;
+    bottom:0%;
+}
+
+/*Imagens da matéria Matriz*/
+.imgMatr{
+    opacity: 0.75;
+} 

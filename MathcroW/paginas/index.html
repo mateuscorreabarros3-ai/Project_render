@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathcroW - Home</title>
+    <link rel="stylesheet" href="../index.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+</head>
+<body>
+
+    <nav>
+        <img src="../img/MWLogo.png" alt="logo" class="logo">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <a class="conaa">Conteúdos</a>
+                <div class="aba">
+                    <a href="#expoimg">Exponencial</a>
+                    <a href="#logimg">Logaritmo</a>
+                    <a href="#matimg">Matrizes</a>
+                    <a href="#sistimg">Sistemas Lineares</a>
+                </div>
+            </div>
+        </div>
+        <button class="btn-login" onclick="window.location.href = 'login.html'">Login</button>
+    </nav>
+
+    <div class="bottom-space"></div>
+
+    <div style="height: 50px;"></div>
+
+    
+    <div class="divBem">
+        <h2 class="bemVindo">Bem vindo ao MathcroW!<p>Um lugar onde você pode aprender conteúdos de matemática mais complexos de forma mais divertida e didática, sem muita enrolação.</p></h2>
+        <div style="width: 30vw;"></div>
+        <img src="../img/corvaaa.png" alt="Corvo Mascote">
+    </div>
+
+
+
+    <div class="carrossel-container">
+        <div class="carrossel-slides">
+          <div class="slide"><img src="../img/1.png" alt="Descrição da imagem 1" id="expoimg"></div>
+          <div class="slide"><img src="../img/2.png" alt="Descrição da imagem 2" id="logimg"></div>
+          <div class="slide"><img src="../img/4.png" alt="Descrição da imagem 3" id="matimg"></div>
+          <div class="slide"><img src="../img/3.png" alt="Descrição da imagem 4" id="sistimg"></div>
+        </div>
+        <button class="botao-prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="botao-next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <h1 class="titulo-planos">Opções de cursos</h1>
+    <div class="container-planos">
+        <div class="planos" onclick="planoSelecionado('exp')"><h3>Exponencial</h3><p>Aprenda de maneira simples o que são sistemas lineares e suas aplicações cotidianas.</p><img src="../img/Equacao-exponencial-4-2048.webp" alt=""></div>
+        <div class="planos" onclick="planoSelecionado('mat')"><h3>Matriz</h3><p>Aprenda de maneira simples o que são sistemas lineares e suas aplicações cotidianas.</p><img src="../img/matrizes-resumo-og (1).webp" alt=""></div>
+        <div class="planos" onclick="planoSelecionado('sis')"><h3>Sistemas Lineares</h3><p>Aprenda de maneira simples o que são sistemas lineares e suas aplicações cotidianas.</p><img src="../img/sistema-linear.webp" alt=""></div>
+        <div class="planos" onclick="planoSelecionado('log')"><h3>Logaritmo</h3><p>Aprenda de maneira simples o que são sistemas lineares e suas aplicações cotidianas.</p><img src="../img/logaritmodefinicao-0.webp" alt=""></div>
+    </div> 
+    <div class="rodape"></div> 
+    <script>
+        let slideIndex = 0;
+
+        let slideTimer = setInterval(() => { 
+            moveSlide(1);
+            console.log('Passado');
+        }, 4000);
+
+        function moveSlide(passo) {
+            const slides = document.querySelectorAll('.slide');
+            const totalSlides = slides.length;
+
+            slideIndex += passo;
+
+            if (slideIndex >= totalSlides) {
+                slideIndex = 0;
+            }
+
+            if (slideIndex < 0) {
+                slideIndex = totalSlides - 1;
+            }
+
+            const containerSlides = document.querySelector('.carrossel-slides');
+            containerSlides.style.transform = `translateX(${-slideIndex * 100}%)`;
+        }
+
+        function planoSelecionado(qual){
+            sessionStorage.setItem('materia', qual);
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

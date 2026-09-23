@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar</title>
+    <link rel="stylesheet" href="../login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="bem-vindo">
+            <a href="index.html"><img src="../img/corvaaaReverso.png" alt="logo"></a>
+            <div class="texto-bem-vindo">
+                <h1>Bem-vindo ao MathcroW!</h1>
+                <h3>Um lugar onde você pode aprender conteúdos de matemática mais complexos de forma mais divertida e didática sem enrolação.</h3>
+            </div>
+        </div>
+        <form class="formulario">
+            <h2>Faça o login:</h2> 
+                <div class="form-group">
+                    <label for="nomeQueQuero">Nome</label>
+                    <input type="text" id="nomeQueQuero" placeholder="Nome">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="seu@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <div class="form-group senha">
+                        <input type="password" id="senha" placeholder="••••••••">
+                        <button class="bt-olho" id="olhoSenha" type="button" onclick="mudarSenha()">O.O</button>
+                    </div>
+                </div>
+            <button type="button" class="bt-entrar" onclick="entrar()">Entrar</button>
+            </form>
+    </div>
+    <script src="../script.js"></script>
